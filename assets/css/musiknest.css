@@ -1178,3 +1178,57 @@ h2.mn-eyebrow { margin: 0 0 var(--space-3); }
   .mn-dd { max-width: none; }
   .mn-dd__panel { width: 100%; grid-template-columns: minmax(0, 1fr); max-height: 60vh; }
 }
+
+/* Pakete mit Preisen (Flyer "Pakete") */
+.mn-included { display: grid; gap: 4px; background: #d6e7dc; border-radius: var(--radius-md); padding: var(--space-4) var(--space-6); margin-bottom: var(--space-6); color: var(--ink-900); }
+.mn-included b { color: var(--forest-700); font-size: 17px; }
+.mn-prices { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); align-items: stretch; }
+.mn-price { position: relative; display: grid; align-content: start; gap: var(--space-3); background: var(--white); border: 1px solid var(--sand-200); border-radius: var(--radius-lg); padding: var(--space-6); }
+.mn-price__top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.mn-price__top h3 { font-size: 22px; font-weight: 800; letter-spacing: .02em; color: var(--forest-700); }
+.mn-price__top span { font-size: 13px; color: var(--green-500); }
+.mn-price__amount { color: var(--ink-600); }
+.mn-price__amount b { font-size: 40px; line-height: 1; font-weight: 800; color: var(--forest-700); letter-spacing: -.02em; }
+.mn-price__text { color: var(--ink-700, #263a33); }
+.mn-price dl { margin: auto 0 0; padding-top: var(--space-3); border-top: 1px solid var(--sand-200); display: grid; gap: 6px; font-size: 14px; }
+.mn-price dl div { display: flex; justify-content: space-between; gap: 12px; }
+.mn-price dt { color: var(--ink-600); }
+.mn-price dd { margin: 0; font-weight: 700; color: var(--forest-700); text-align: right; }
+.mn-price dd em { font-style: normal; color: var(--gold-400); }
+.mn-price--dark { background: #2b4a3c; border-color: #2b4a3c; }
+.mn-price--dark h3, .mn-price--dark .mn-price__amount b, .mn-price--dark dd { color: var(--white); }
+.mn-price--dark .mn-price__top span { color: var(--gold-400); }
+.mn-price--dark .mn-price__amount, .mn-price--dark .mn-price__text, .mn-price--dark dt { color: rgba(255,255,255,.85); }
+.mn-price--dark dl { border-color: rgba(255,255,255,.2); }
+.mn-goodtoknow { margin-top: var(--space-8); }
+.mn-goodtoknow h3 { font-size: 18px; color: var(--forest-700); margin-bottom: var(--space-3); }
+.mn-goodtoknow ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px var(--space-8); color: var(--ink-700, #263a33); font-size: 15px; }
+/* Preisliste "Raum mieten" */
+.mn-roomprice__i { display: grid; gap: 4px; background: #d6e7dc; border-radius: var(--radius-md); padding: var(--space-6); }
+.mn-roomprice__i h3 { font-size: 22px; color: var(--forest-700); }
+.mn-roomprice__i p { color: var(--ink-600); }
+.mn-roomprice__i b { color: var(--forest-700); }
+.mn-roomprice__i--dark { background: #2b4a3c; }
+.mn-roomprice__i--dark h3 { color: var(--white); }
+.mn-roomprice__i--dark p { color: rgba(255,255,255,.8); }
+.mn-roomprice__i--dark b { color: var(--gold-400); }
+.mn-ptable { width: 100%; border-collapse: collapse; background: var(--white); margin-top: var(--space-3); font-size: 15.5px; }
+.mn-ptable th { text-align: left; background: #e4f1e9; color: var(--forest-700); font-weight: 700; padding: 12px 18px; }
+.mn-ptable td { padding: 12px 18px; border-top: 1px solid #efe9df; }
+.mn-ptable th:not(:first-child), .mn-ptable td:not(:first-child) { text-align: right; width: 120px; }
+.mn-ptable td:not(:first-child) { font-weight: 700; color: var(--forest-700); }
+.mn-tag-gold { display: inline-block; vertical-align: middle; margin-left: 10px; background: var(--gold-400); color: var(--forest-900); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 4px; }
+.mn-fixrow { display: flex; justify-content: space-between; gap: var(--space-4); background: var(--white); padding: 14px 18px; margin-top: var(--space-3); }
+.mn-fixrow b { color: var(--forest-700); white-space: nowrap; }
+.mn-mt { margin-top: var(--space-8); }
+@media (max-width: 1080px) { .mn-prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .mn-prices, .mn-goodtoknow ul { grid-template-columns: minmax(0, 1fr); }
+  .mn-ptable th, .mn-ptable td { padding: 10px 12px; }
+  .mn-ptable th:not(:first-child), .mn-ptable td:not(:first-child) { width: 72px; }
+}
+
+/* Kurse & Termine: Therapeut:innen als Chips in einer Zeile, Dropdown nur bei Platzmangel */
+.mn-whochips { display: flex; flex-wrap: wrap; gap: 8px; }
+.mn-whochips[hidden], .mn-dd[hidden] { display: none; }
+.mn-whochips .mn-chip--who { flex: none; }
