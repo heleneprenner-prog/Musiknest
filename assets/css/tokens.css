@@ -1,0 +1,32 @@
+/* Musiknest — Design-Tokens (gleiche Namen wie tokens.json im Design-Manual) */
+:root {
+  /* Farben aus dem Logo und dem freigegebenen dunkelgrünen Entwurf */
+  --forest-900: #0f3329;   /* Kopf, Hero, Footer, dunkle Flächen */
+  --forest-700: #1f4a39;   /* Logo-Dunkelgrün, Buttons, Überschriften */
+  --green-500: #327c5b;    /* Logo-Klangbalken, Links, Raumgrößen */
+  --mint-100: #ddf3e7;     /* Logo-Minze, ruhige Flächen */
+  --mint-50: #eef8f2;      /* Hintergrund von Karten auf Weiß */
+  --gold-400: #f1c84a;     /* Logo-Senfgelb, Akzent auf Dunkel */
+  --gold-500: #d9aa3c;     /* Goldverlauf, Linien */
+  --gold-200: #f7e6b0;     /* helle Senf-Fläche, Tags */
+  --ivory-50: #fbf8f2;     /* Seitenhintergrund */
+  --ivory-100: #f4eee2;    /* abgesetzte Abschnitte */
+  --sand-200: #e6ddcc;     /* Linien, Rahmen */
+  --ink-900: #1d2a25;      /* Fließtext */
+  --ink-600: #56635d;      /* Nebentext */
+  --white: #ffffff;
+  --on-dark: #eef4f0;      /* Text auf Dunkelgrün */
+  --on-dark-muted: #b8cbc0;/* Nebentext auf Dunkelgrün */
+  --note: #a3215f;         /* nur Entwurfsmarkierungen (fehlende Inhalte) */
+
+  --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px;
+  --space-8: 32px; --space-12: 48px; --space-16: 64px; --space-24: 96px; --space-30: 120px;
+
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px; --radius-pill: 999px;
+
+  --shadow-card: 0 18px 50px rgba(15, 51, 41, 0.12);
+  --shadow-soft: 0 2px 10px rgba(15, 51, 41, 0.06);
+  --max-width: 1240px;
+}
