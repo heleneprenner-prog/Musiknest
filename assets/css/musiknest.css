@@ -1011,7 +1011,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 /* Admin: Navigation mit Zählern */
 .mn-area__n { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; margin-left: 6px; border-radius: 999px; background: var(--gold-400); color: var(--forest-900); font-size: 11px; font-weight: 800; vertical-align: 1px; }
-.mn-mt { margin-top: var(--space-8); }
+.mn .mn-mt { margin-top: var(--space-8); }
 h2.mn-eyebrow { margin: 0 0 var(--space-3); }
 /* Anfrage-Detail */
 .mn-reqd { display: grid; gap: var(--space-4); }
@@ -1220,7 +1220,7 @@ h2.mn-eyebrow { margin: 0 0 var(--space-3); }
 .mn-tag-gold { display: inline-block; vertical-align: middle; margin-left: 10px; background: var(--gold-400); color: var(--forest-900); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 4px; }
 .mn-fixrow { display: flex; justify-content: space-between; gap: var(--space-4); background: var(--white); padding: 14px 18px; margin-top: var(--space-3); }
 .mn-fixrow b { color: var(--forest-700); white-space: nowrap; }
-.mn-mt { margin-top: var(--space-8); }
+.mn .mn-mt { margin-top: var(--space-8); }
 @media (max-width: 1080px) { .mn-prices { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 760px) {
   .mn-prices, .mn-goodtoknow ul { grid-template-columns: minmax(0, 1fr); }
@@ -1232,3 +1232,8 @@ h2.mn-eyebrow { margin: 0 0 var(--space-3); }
 .mn-whochips { display: flex; flex-wrap: wrap; gap: 8px; }
 .mn-whochips[hidden], .mn-dd[hidden] { display: none; }
 .mn-whochips .mn-chip--who { flex: none; }
+/* Preisliste: Abstände zwischen den Tabellen */
+#preise h3.mn-h3.mn-mt { margin-top: 40px; margin-bottom: 4px; }
+#preise .mn-small { margin-top: 10px; }
+.mn-roomprice { margin-bottom: 8px; }
+.mn-included { margin-bottom: 20px; }
