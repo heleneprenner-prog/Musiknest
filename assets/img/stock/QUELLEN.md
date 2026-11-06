@@ -27,3 +27,7 @@ Nur für den Prototyp. Die abgebildeten Menschen haben mit dem Musiknest nichts 
 | jonas-berger.jpg | Josias Garibay | https://unsplash.com/de/fotos/rifCUO-4X8k |
 | daniel-kovac.jpg | Christian Buehner | https://unsplash.com/de/fotos/DItYlc26zVI |
 | paul-gruber.jpg | Christoph Aigner | https://unsplash.com/de/fotos/vhj1DvszLZU |
+
+
+## Eigene Fotos (06.11.2026)
+Raumansichten Raum GROSS, Ausstattung (Stühle, Whiteboard, Flipchart, Bodenmatten, Bewegungs- und Instrumentenregal, Decken) und Flyerwand: Stamenography für das Musiknest. Ersetzen die Stockfotos für Whiteboard, Stühle und Matten.
