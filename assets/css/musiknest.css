@@ -1361,3 +1361,8 @@ img[src*="leitung-alexandra-popa"] { object-fit: cover; object-position: 44% 24%
 @media (max-width: 760px) {
   .mn-hero__media > img[src*="raeume-gross-sitzecke"] { object-position: 6% 50%; }
 }
+
+/* Fußzeile: Instagram als Symbol + Handle (Helene 07.11.2026) */
+.mn-insta { display: inline-flex; align-items: center; gap: 8px; }
+.mn-insta svg { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.mn-insta svg .mn-insta__dot { fill: currentColor; stroke: none; }
