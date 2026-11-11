@@ -381,7 +381,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   .mn-duo__welcome { grid-template-columns: minmax(0, 1fr); gap: var(--space-4); }
   .mn-duo__photo { max-width: 260px; aspect-ratio: 3 / 4; min-height: 0; }
   .mn-mosaic { min-height: 0; grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: 120px; }
-  .mn-mosaic__i:first-child { grid-column: 1 / -1; grid-row: auto; height: 240px; }
+  /* Großes Bild über zwei Zeilen statt fester Höhe, sonst ragt es in die kleinen Bilder (Helene 11.11.2026) */
+  .mn-mosaic__i:first-child { grid-column: 1 / -1; grid-row: span 2; height: auto; }
   .mn-matgroup__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mn-roominfo { padding: var(--space-8) var(--space-6); }
   .mn-areacard { aspect-ratio: 3 / 4; }
