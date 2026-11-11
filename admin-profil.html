@@ -16,7 +16,33 @@
         </div>
         <div class="mn-bform__side mn-sticky">
           <div class="mn-card "><span class="mn-eyebrow">Moderation</span><p class="mn-hint-sm">Verborgen ist das Profil nicht öffentlich sichtbar. Der Status „geprüft“ bleibt erhalten.</p><div class="mn-btns"><a class="mn-btn mn-btn--forest" href="admin-profil-bearbeiten.html">Profil bearbeiten</a><button class="mn-btn mn-btn--outline" type="button">Profil verbergen</button></div></div>
-          <div class="mn-card "><span class="mn-eyebrow">Foto-Ausschnitt</span><p class="mn-hint-sm">Wird quadratisch zugeschnitten. Verschieb den Ausschnitt mit der Maus oder dem Finger.</p><div class="mn-crop"><img src="assets/img/app-aufgehellt/raeume-klein-hochformat.jpg" alt="Vorschau des Fotos"></div><label class="mn-range">Ausschnitt waagrecht<input type="range" value="50"></label><label class="mn-range">Ausschnitt senkrecht<input type="range" value="50"></label><div class="mn-btns"><button class="mn-btn mn-btn--forest" type="button">Ausschnitt speichern</button></div></div>
+          <div class="mn-card "><span id="foto"></span><span class="mn-eyebrow">Foto-Ausschnitt</span><p class="mn-hint-sm">Zieh das Foto an die richtige Stelle und zoome mit dem Regler. Lena sieht den neuen Ausschnitt sofort in ihrem Profil.</p><div class="mn-crop mn-crop--live" data-crop><img src="assets/img/stock/team/hanna-leitner.jpg" alt="Vorschau deines Fotos" draggable="false"></div><div class="mn-crop__preview" aria-hidden="true"><span class="mn-crop__mini mn-crop__mini--round"><img src="assets/img/stock/team/hanna-leitner.jpg" alt=""></span><small>So erscheint Lena als Avatar</small></div><label class="mn-range">Zoom<input type="range" min="100" max="300" value="120" data-crop-zoom></label><label class="mn-range">Waagrecht<input type="range" min="0" max="100" value="50" data-crop-x></label><label class="mn-range">Senkrecht<input type="range" min="0" max="100" value="30" data-crop-y></label><div class="mn-btns"><button class="mn-btn mn-btn--outline mn-btn--sm" type="button" data-crop-reset>Zurücksetzen</button></div><script>
+(function () {
+  var box = document.querySelector('[data-crop]'); if (!box) return;
+  var img = box.querySelector('img'), mini = document.querySelector('.mn-crop__mini img');
+  var z = document.querySelector('[data-crop-zoom]'), x = document.querySelector('[data-crop-x]'), y = document.querySelector('[data-crop-y]');
+  function draw() {
+    [img, mini].forEach(function (i) { if (!i) return;
+      i.style.objectPosition = x.value + '% ' + y.value + '%';
+      i.style.transformOrigin = x.value + '% ' + y.value + '%';
+      i.style.transform = 'scale(' + z.value / 100 + ')'; });
+  }
+  [z, x, y].forEach(function (r) { r.addEventListener('input', draw); });
+  var drag = null;
+  box.addEventListener('pointerdown', function (e) { drag = { px: e.clientX, py: e.clientY, x: +x.value, y: +y.value }; box.setPointerCapture(e.pointerId); });
+  box.addEventListener('pointermove', function (e) { if (!drag) return;
+    var k = 100 / box.clientWidth / (z.value / 100) * 1.5;
+    x.value = Math.max(0, Math.min(100, drag.x - (e.clientX - drag.px) * k));
+    y.value = Math.max(0, Math.min(100, drag.y - (e.clientY - drag.py) * k)); draw(); });
+  ['pointerup', 'pointercancel'].forEach(function (t) { box.addEventListener(t, function () { drag = null; }); });
+  box.addEventListener('wheel', function (e) { e.preventDefault(); z.value = Math.max(100, Math.min(300, +z.value - Math.sign(e.deltaY) * 10)); draw(); }, { passive: false });
+  document.querySelector('[data-crop-reset]').addEventListener('click', function () { z.value = 120; x.value = 50; y.value = 30; draw(); });
+  var fi = document.querySelector('[data-crop-file]'); if (fi) fi.addEventListener('change', function (e) {
+    var f = e.target.files[0]; if (!f) return; var u = URL.createObjectURL(f);
+    img.src = u; if (mini) mini.src = u; z.value = 100; x.value = 50; y.value = 50; draw(); });
+  draw();
+})();
+</script><div class="mn-btns"><button class="mn-btn mn-btn--forest" type="button">Ausschnitt speichern</button></div></div>
         </div>
       </div></div></section></main><footer class="mn-footer" id="kontakt"><div class="mn-wrap">
   <div class="mn-footer__grid">

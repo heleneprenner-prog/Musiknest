@@ -29,7 +29,7 @@
   ['pointerup', 'pointercancel'].forEach(function (t) { box.addEventListener(t, function () { drag = null; }); });
   box.addEventListener('wheel', function (e) { e.preventDefault(); z.value = Math.max(100, Math.min(300, +z.value - Math.sign(e.deltaY) * 10)); draw(); }, { passive: false });
   document.querySelector('[data-crop-reset]').addEventListener('click', function () { z.value = 120; x.value = 50; y.value = 30; draw(); });
-  document.querySelector('[data-crop-file]').addEventListener('change', function (e) {
+  var fi = document.querySelector('[data-crop-file]'); if (fi) fi.addEventListener('change', function (e) {
     var f = e.target.files[0]; if (!f) return; var u = URL.createObjectURL(f);
     img.src = u; if (mini) mini.src = u; z.value = 100; x.value = 50; y.value = 50; draw(); });
   draw();
